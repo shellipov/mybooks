@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.nav {
+  height: 62px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(30deg, #13547a, rgb(40, 21, 49));
+  font-family: $PrimaryFont;
+  color: white;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button-block {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin: 1rem 0;
+}
+
+.link_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

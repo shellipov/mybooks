@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.auth_block{
+  border-radius: 5px;
+  width: 60%;
+  background-color: white;
+  padding: 3rem;
+  max-width: 400px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.178);
+}
+
+.error_block{
+   min-height: 1rem;
+   color: $Red;
+   margin-bottom: .5rem;
+   text-align: center;
+}

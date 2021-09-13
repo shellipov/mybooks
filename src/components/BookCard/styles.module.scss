@@ -1,0 +1,49 @@
+.book_card {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.card_image {
+  display: block;
+  height: 11rem;
+  margin: 0.5rem auto;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.discription_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height: 1.3;
+}
+
+.button_block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.delimiter{
+  width: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .book_card{
+    min-width: 568px;
+    margin: 0 auto;
+
+  }
+  .button_block {
+    justify-content: flex-start;
+  }
+  .delimiter{
+    width: 1rem;
+  }
+}
+
+

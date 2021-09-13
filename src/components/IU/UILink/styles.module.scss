@@ -1,0 +1,36 @@
+@import "../../../styles/variables.scss";
+
+.uilink {
+  transition: all 0.3s;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.button {
+  border: 1px solid white;
+  color: white;
+  box-sizing: border-box;
+  padding: 0.3rem 0.7rem;
+  margin: 0;
+  background-color: rgba(165, 153, 153, 0);
+  border-radius: 3px;
+  transition: all 0.3s;
+  text-align: center;
+  font-family: $PrimaryFont;
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+  &:active {
+    background-color: white;
+    color: black;
+  }
+}
+
+.link {
+  color: red;
+}

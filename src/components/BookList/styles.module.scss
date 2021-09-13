@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.card_list {
+  height: calc(98vh - 93px - 82px - 25px);
+  overflow: scroll;
+  background: rgba(0, 0, 0, 0.705);
+  border-radius: 8px;
+  border: 0.5rem solid rgba(0, 0, 0, 0);
+  margin: 0 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+  grid-auto-rows: min-content;
+}
+.there_no_books{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-family: $PrimaryFont;
+  color: white;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .card_list {
+    grid-template-columns: 1fr !important;
+  }
+}
