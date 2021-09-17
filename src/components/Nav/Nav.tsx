@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Route } from "react-router-dom";
-import { UILink, IUILinkType } from "../IU/UILink/UILink";
+import { UILink, IUILinkType } from "../UI/UILink/UILink";
 import { RoutePaths } from "../../routes";
 import { useTypeSelector } from "../../hooks/useTypeSelector";
 import { useActions } from "../../hooks/useActions";
 import styles from "./style.module.scss";
-import Button from "../IU/Button/Button";
+import Button from "../UI/Button/Button";
 
 const Nav: FC = () => {
   const { isAuth, user } = useTypeSelector((store) => store.auth);

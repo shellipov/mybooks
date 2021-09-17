@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
-import LabelInput from "../IU/Input/LabelInput";
-import Button from "../IU/Button/Button";
+import LabelInput from "../UI/Input/LabelInput";
+import Button from "../UI/Button/Button";
 import {useTypeSelector} from '../../hooks/useTypeSelector'
 import { useActions } from "../../hooks/useActions";
 import styles from "./style.module.scss";

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Input from "../IU/Input/Input";
-import Select from "../IU/Select/Select";
+import Input from "../UI/Input/Input";
+import Select from "../UI/Select/Select";
 import { sortData } from "../../constants";
 
 import styles from "./styles.module.scss";

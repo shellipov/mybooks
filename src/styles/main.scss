@@ -1,55 +1,65 @@
 @import "./reset";
-@import './variables.scss';
-
+@import "./variables.scss";
 
 body {
   line-height: 1;
   background-color: rgb(155, 208, 221);
 
   .container {
-    height: calc(100vh -  62px);
+    height: calc(100vh - 62px);
     background-color: rgba(255, 255, 255, 0.671);
     max-width: 1170px;
     margin: 62px auto 0;
     position: relative;
   }
 
-  h1{
+  h1 {
     font-family: $SecondaryFont;
     font-size: 35px;
     color: rgb(36, 34, 35);
     text-align: center;
-    text-shadow:  0px 0px 15px rgba(252, 252, 252, 0.356);
-
+    text-shadow: 0px 0px 15px rgba(252, 252, 252, 0.356);
   }
 
-  .center{
+  .center {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+
+  .gap{
+    width: 1rem;
   }
 
   .column {
     flex-direction: column;
   }
-
-  .full_heigth{
-    height: calc(100vh -  62px);
-
+  .row {
+    flex-direction: row;
   }
 
-  .margin{
+  .full_heigth {
+    height: calc(100vh - 62px);
+  }
+
+  .margin {
     margin: 2rem;
   }
-  .padding{
+  .padding {
     padding: 2rem;
   }
 
-  .top_right_corner{
+  .top_right_corner {
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
   }
-
+  .link {
+    color: $Blue;
+    transition: all 0.3s;
+    &:hover{
+      color: $Red
+    }
+  }
 }
-

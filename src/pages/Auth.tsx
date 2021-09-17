@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import LogIn from "../components/AuthComponents/LogIn";
 import SignIn from "../components/AuthComponents/SignIn";
-import Button from "../components/IU/Button/Button";
+import Button from "../components/UI/Button/Button";
 
 const Auth: FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);

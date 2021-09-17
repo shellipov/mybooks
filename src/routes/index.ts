@@ -2,7 +2,7 @@ import React from "react";
 import Auth from "../pages/Auth";
 import About from "../pages/About";
 import Books from "../pages/Books";
-import AddBook from "../pages/AddBook";
+import AddBookPage from "../pages/AddBookPage";
 import EditBook from "../pages/EditBook";
 
 export interface IRoute {
@@ -27,7 +27,7 @@ export const privateRoutes = [
   },
   {
     path: RoutePaths.ADD_BOOK,
-    component: AddBook,
+    component: AddBookPage,
     exact: true,
   },
   {

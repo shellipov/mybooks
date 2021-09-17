@@ -1,19 +1,30 @@
 import React, { FC, useState, useEffect, useMemo } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useTypeSelector } from "../hooks/useTypeSelector";
 import IBook from "../models/IBook";
 import firstStart from "../utils/firstStart";
 import { startBooks } from "../constants";
-import BookList from "../components/BookList";
+import Modal from "../components/Modal/Modal";
+import BookList from "../components/BookList/BookList";
 import BookFilter from "../components/BookFilter/BookFilter";
 
 const Books: FC = () => {
-  const [books, setBooks] = useLocalStorage(startBooks, "books");
-
+  const { user } = useTypeSelector((store) => store.auth);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [bookID, setBookID] = useState<string>("");
+  const [books, setBooks] = useLocalStorage(
+    startBooks,
+    `${user.username}'s_books`
+  );
   const [sortType, setSortType] = useLocalStorage(
     { type: "name", direction: "down" },
     "sort_type"
   );
   const [searchData, setSearchData] = useState<string>("");
+
+  useEffect(() => {
+    firstStart(setBooks, user.username);
+  }, []);
 
   const sortedBooks = useMemo(() => {
     return [...books].sort((a, b) =>
@@ -30,18 +41,21 @@ const Books: FC = () => {
     return nameFiltedBooks;
   }, [searchData, sortedBooks]);
 
-  useEffect(() => {
-    firstStart(setBooks);
-  }, []);
-
   function deleteBook(id: string) {
+    setModalVisible(true);
+    setBookID(id);
+  }
+  function confirmDeleteBook(id: string) {
     const newBookList = books.filter((book: IBook) => book.id !== id);
     setBooks(newBookList);
+    setModalVisible(false);
+    setBookID("");
   }
 
   return (
     <>
       <h1 className="padding">Список книг</h1>
+
       <BookFilter
         sortType={sortType}
         setSortType={setSortType}
@@ -49,6 +63,16 @@ const Books: FC = () => {
         setSearchData={setSearchData}
       />
       <BookList books={sortedAndSearchedBooks} deleteBook={deleteBook} />
+
+      {modalVisible && (
+        <Modal
+          title={" Точно удалить? "}
+          firstBtnName={"Да"}
+          firstBtnFunction={() => confirmDeleteBook(bookID)}
+          secondBtnName={"Нет"}
+          secondBtnFunction={() => setModalVisible(false)}
+        />
+      )}
     </>
   );
 };

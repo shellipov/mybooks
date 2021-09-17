@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, ButtonHTMLAttributes } from "react";
 import styles from "./styles.module.scss";
 
 type UIButtonType = "blue" | "red";
 
-interface IUIButton {
+interface IUIButton extends ButtonHTMLAttributes<HTMLButtonElement>  {
   color?: UIButtonType;
   children: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Button: FC<IUIButton> = ({ children, color = "blue", ...props }) => {

@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 interface IUIInput extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  children?: React.ReactElement;
+  children?: React.ReactElement | React.ReactNode;
   visible?: boolean;
 }
 

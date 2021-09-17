@@ -1,7 +1,7 @@
 import React, {FC } from "react";
 import IBook from '../../models/IBook'
 import { useHistory } from "react-router-dom";
-import Button from "../IU/Button/Button";
+import Button from "../UI/Button/Button";
 import styles from "./styles.module.scss";
 import bookImage from "../../images/book.jpg";
 

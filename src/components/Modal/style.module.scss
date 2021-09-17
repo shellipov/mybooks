@@ -1,0 +1,21 @@
+.modal_background {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.829);
+}
+.modal_window {
+  background: #ffffff;
+  position: relative;
+  margin: 0 auto;
+  top: 35%;
+  width: 40%;
+  padding: 4rem;
+  border-radius: 5px;
+  button{
+    margin: .3rem;
+  }
+}
