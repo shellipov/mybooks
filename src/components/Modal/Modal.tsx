@@ -1,6 +1,5 @@
 import React, { FC, useRef } from "react";
 import ReactDom from "react-dom";
-import { useHistory } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import styles from "./style.module.scss";
 
@@ -19,7 +18,6 @@ const Modal: FC<IModalProps> = ({
   secondBtnName,
   secondBtnFunction,
 }) => {
-  const history = useHistory();
   const modalWindow = useRef(null);
 
   return ReactDom.createPortal(

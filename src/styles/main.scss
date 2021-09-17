@@ -4,6 +4,7 @@
 body {
   line-height: 1;
   background-color: rgb(155, 208, 221);
+  background-image: url(../images/background.png);
 
   .container {
     height: calc(100vh - 62px);
@@ -30,6 +31,7 @@ body {
 
   .gap{
     width: 1rem;
+    height: 1rem;
   }
 
   .column {
