@@ -1,5 +1,6 @@
 import IUser from "../../../models/IUser";
-import authApi from "../../../api/authApi";
+// import authApi from "../../../api/authApi";
+import fakeApi from "../../../api/fakeApi";
 import { AppDispatch } from "../../index";
 import {
   SetIsAuthAction,
@@ -33,7 +34,7 @@ export const AuthActionCreators = {
     (username: string, password: string) => async (dispatch: AppDispatch) => {
       try {
         dispatch(AuthActionCreators.setIsLoading(true));
-        const { data } = await authApi.getUsers();
+        const data = await fakeApi.getUsers();
         const mockUser = data.find(
           (user: IUser) =>
             user.username === username && user.password === password
@@ -48,15 +49,47 @@ export const AuthActionCreators = {
         }
 
         dispatch(AuthActionCreators.setIsLoading(false));
-      } catch (error) {
-        dispatch(AuthActionCreators.setError("Произошло ошибка"));
+      } catch (error: any) {
+        dispatch(
+          AuthActionCreators.setError(
+            `Произошлa ошибка - ${error.message ? error.message : null}`
+          )
+        );
       }
     },
-    logout: () => async (dispatch: AppDispatch) => {
-      localStorage.removeItem("isAuth");
-      localStorage.removeItem("username");
-      dispatch(AuthActionCreators.setUser({} as IUser));
-      dispatch(AuthActionCreators.setIsAuth(false));
-
+  signin:
+    (username: string, password: string, confirmPassword: string) =>
+    async (dispatch: AppDispatch) => {
+      try {
+        if (password !== confirmPassword) {
+          dispatch(AuthActionCreators.setError(`Пароли не совпадают`));
+        } else {
+          const { newUser, error }: { newUser?: IUser; error?: string } =
+            await fakeApi.addUser(username, password);
+          if (error) {
+            dispatch(
+              AuthActionCreators.setError(`Произошлa ошибка - ${error}`)
+            );
+          }
+          if (newUser) {
+            localStorage.setItem("isAuth", "true");
+            localStorage.setItem("username", username);
+            dispatch(AuthActionCreators.setUser(newUser));
+            dispatch(AuthActionCreators.setIsAuth(true));
+          }
+        }
+      } catch (error: any) {
+        dispatch(
+          AuthActionCreators.setError(
+            `Произошлa ошибка - ${error.message ? error.message : null}`
+          )
+        );
+      }
+    },
+  logout: () => async (dispatch: AppDispatch) => {
+    localStorage.removeItem("isAuth");
+    localStorage.removeItem("username");
+    dispatch(AuthActionCreators.setUser({} as IUser));
+    dispatch(AuthActionCreators.setIsAuth(false));
   },
 };

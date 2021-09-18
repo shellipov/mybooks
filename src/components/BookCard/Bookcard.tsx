@@ -3,7 +3,7 @@ import IBook from '../../models/IBook'
 import { useHistory } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import styles from "./styles.module.scss";
-import bookImage from "../../images/book.jpg";
+import bookImage from "../../images/book.png";
 
 interface IBookCardProps {
   book: IBook;

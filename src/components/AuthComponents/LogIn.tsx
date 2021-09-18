@@ -1,17 +1,24 @@
 import React, { FC, useState } from "react";
 import LabelInput from "../UI/Input/LabelInput";
 import Button from "../UI/Button/Button";
-import {useTypeSelector} from '../../hooks/useTypeSelector'
+import { useTypeSelector } from "../../hooks/useTypeSelector";
 import { useActions } from "../../hooks/useActions";
 import styles from "./style.module.scss";
 
 const LogIn: FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassrord] = useState("");
-  const {error} = useTypeSelector(state => state.auth)
-  const { login } = useActions();
+  const { error } = useTypeSelector((state) => state.auth);
+  const { login, setError } = useActions();
 
-  function fetchData() {
+  function buttonClick(e: React.KeyboardEvent) {
+    if (e.key === "Enter") {
+      login(username, password);
+    }
+  }
+
+  function submitForm(e: React.FormEvent) {
+    e.preventDefault();
     login(username, password);
   }
   return (
@@ -19,25 +26,33 @@ const LogIn: FC = () => {
       <div className="margin">
         <h1>Войти</h1>
       </div>
-      <div className={styles.auth_block}>
-        <div className={styles.error_block}>
-          {error}
-        </div>
+      <form
+        className={styles.auth_block}
+        onSubmit={submitForm}
+        onKeyDown={buttonClick}
+      >
+        <div className={styles.error_block}>{error}</div>
         <LabelInput
           label="Логин"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => {
+            setUsername(e.target.value);
+            setError("");
+          }}
         />
         <LabelInput
           label="Пароль"
           type="password"
           value={password}
-          onChange={(e) => setPassrord(e.target.value)}
+          onChange={(e) => {
+            setPassrord(e.target.value);
+            setError("");
+          }}
         />
         <div className="center">
-          <Button onClick={fetchData}>{"Войти"}</Button>
+          <Button>{"Войти"}</Button>
         </div>
-      </div>
+      </form>
     </>
   );
 };

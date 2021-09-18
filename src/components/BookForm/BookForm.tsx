@@ -5,8 +5,8 @@ import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import LabelInput from "../UI/Input/LabelInput";
 import Button from "../UI/Button/Button";
 import IBook from "../../models/IBook";
-import book from "../../images/book.jpg";
-import videoFile from "../../data/video.mp4";
+import book from "../../images/book.png";
+import videoFile from "../../video/add_image.mp4";
 import "./style.scss";
 
 interface IBookForm {

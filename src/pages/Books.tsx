@@ -10,7 +10,7 @@ import BookFilter from "../components/BookFilter/BookFilter";
 
 const Books: FC = () => {
   
-  const { user } = useTypeSelector((store) => store.auth);
+  const { user }= useTypeSelector((store) => store.auth);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [bookID, setBookID] = useState<string>("");
   const [books, setBooks] = useLocalStorage(
@@ -24,7 +24,7 @@ const Books: FC = () => {
   const [searchData, setSearchData] = useState<string>("");
 
   useEffect(() => {
-    firstStart(setBooks, user.username);
+    firstStart(setBooks, user.username );
   }, []);
 
   const sortedBooks = useMemo(() => {

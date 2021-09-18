@@ -1,4 +1,5 @@
 import IBook from '../models/IBook'
+import IUser from '../models/IUser'
 
 export const startBooks: IBook[] = [
   {
@@ -95,3 +96,14 @@ export const initialInputs: IBook = {
   image: "",
   id: "",
 };
+
+export const startUsers: IUser[] = [
+  {
+    "username": "user",
+    "password": "user"
+  },
+  {
+    "username": "admin",
+    "password": "admin"
+  }
+]
