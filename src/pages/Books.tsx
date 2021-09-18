@@ -56,6 +56,7 @@ const Books: FC = () => {
   return (
     <>
       <h1 className="padding">Список книг</h1>
+      <div className="center">
 
       <BookFilter
         sortType={sortType}
@@ -64,6 +65,8 @@ const Books: FC = () => {
         setSearchData={setSearchData}
       />
       <BookList books={sortedAndSearchedBooks} deleteBook={deleteBook} />
+      </div>
+
 
       {modalVisible && (
         <Modal

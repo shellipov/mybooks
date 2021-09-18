@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import { Route } from "react-router-dom";
 import { UILink, IUILinkType } from "../UI/UILink/UILink";
 import { RoutePaths } from "../../routes";
@@ -9,9 +9,11 @@ import Button from "../UI/Button/Button";
 
 const Nav: FC = () => {
   const { isAuth, user } = useTypeSelector((store) => store.auth);
+  const ref = useRef<null | any>(null);
   const { logout } = useActions();
+
   return (
-    <header className={styles.nav}>
+    <header ref={ref} className={styles.nav}>
       <div className={styles.title_block}>
         <div className={styles.title}>Редактор книг</div>
       </div>
@@ -43,9 +45,9 @@ const Nav: FC = () => {
                 Добавить книгу
               </UILink>
             </Route>
-            <Button color="red" onClick={logout}>
-              {`Выйти из ${user.username}`}
-            </Button>
+              <Button color="red" onClick={logout}>
+                {`Выйти из ${user.username}`}
+              </Button>
           </>
         ) : (
           <>

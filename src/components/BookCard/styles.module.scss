@@ -36,7 +36,6 @@
   .book_card{
     min-width: 568px;
     margin: 0 auto;
-
   }
   .button_block {
     justify-content: flex-start;
@@ -46,4 +45,28 @@
   }
 }
 
+@media screen and (max-width: 615px) {
+  .book_card{
+    min-width: 100%;
+    font-size: .9rem;
+    grid-template-columns: 30% 70%;
+
+  }
+  .card_image {
+    height: 9rem;
+    margin: 0.2rem auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .book_card{
+    font-size: .7rem;
+    grid-template-columns: 30% 70%;
+
+  }
+  .card_image {
+    height: 9rem;
+    margin: 0.2rem auto;
+  }
+}
 

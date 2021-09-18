@@ -3,7 +3,7 @@
 .button {
   box-sizing: border-box;
   padding: 0.3rem 0.7rem;
-  margin: 0;
+  margin: 0 .5rem;
   background-color: white;
   border-radius: 3px;
   transition: all 0.3s;
@@ -29,5 +29,13 @@
   color: $Red;
   &:hover {
     background: $Red;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .button{
+    font-size: 0.7rem;
+
   }
 }

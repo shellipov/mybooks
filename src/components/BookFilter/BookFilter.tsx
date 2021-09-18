@@ -21,7 +21,7 @@ const BookFilter: FC<IBookFilterProps> = ({
   return (
     <div className={styles.buttons_block}>
       <div className={styles.sort_block}>
-        <div className={styles.text}>Сортировать по</div>
+        <div className={styles.text}>Сортировать&nbsp;по</div>
         <Select
           defaultValue="Сортировка"
           options={sortData}

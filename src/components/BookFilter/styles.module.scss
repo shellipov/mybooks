@@ -1,6 +1,8 @@
 .buttons_block{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 493px 493px;
+  grid-gap: .5rem;
+  // width: 100%;
 }
 
 .text{
@@ -18,5 +20,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 7rem .5rem 0;
+  margin: 0 0 .5rem 0;
 }
+
+@media screen and (max-width: 1200px) {
+  .buttons_block{
+    width: auto;
+    grid-template-columns: 290px 290px;
+  }
+  .sort_block{
+    margin: 0 0 .5rem .3rem;
+  }
+  .search_block{
+    margin: 0 0 .5rem 0rem;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .buttons_block{
+    width: auto;
+    grid-template-columns: 1fr auto;
+  }
+
+}
+
