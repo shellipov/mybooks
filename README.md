@@ -7,7 +7,7 @@
 
 Ссылка на программу: 
 
-> https://shellipov.github.io/books/#/
+> https://shellipov.github.io/mybooks/
 
 ![screenshot](readme-assets/1.png)
 ![screenshot](readme-assets/2.png)

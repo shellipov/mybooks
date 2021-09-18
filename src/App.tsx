@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AppRouter from "./components/AppRouter";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import { useActions } from "./hooks/useActions";
 import IUser from "./models/IUser";
@@ -21,12 +21,12 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Nav />
       <div className="container">
         <AppRouter />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
