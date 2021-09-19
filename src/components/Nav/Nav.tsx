@@ -53,7 +53,7 @@ const Nav: FC = () => {
           <>
             <Route exact path={RoutePaths.ABOUT}>
               <UILink type={IUILinkType.button} to={RoutePaths.AUTH}>
-                Список книг
+                Авторизация
               </UILink>
             </Route>
 

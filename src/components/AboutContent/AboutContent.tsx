@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 function AboutContent() {
   return (
     <section className={styles.about_section}>
+      <div className={styles.fade_in}></div>
       <h3>Данная программа является тестовым заданием</h3>
 
       <h3>Функциональные требования:</h3>
@@ -58,6 +59,7 @@ function AboutContent() {
           <li>Переиспользование компонентов </li>
         </ul>
       </p>
+      <div className="fade_out"></div>
     </section>
   );
 }
