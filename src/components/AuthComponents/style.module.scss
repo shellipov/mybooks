@@ -1,17 +1,83 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
-.auth_block{
-  border-radius: 5px;
-  width: 60%;
-  background-color: white;
-  padding: 3rem;
-  max-width: 400px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.178);
+.container {
+  min-width: 60%;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 50%;
+  position: relative;
 }
 
-.error_block{
-   min-height: 1rem;
-   color: $Red;
-   margin-bottom: .5rem;
-   text-align: center;
+.auth_back_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  background: rgb(255, 255, 255);
+  min-width: 325px;
+}
+
+.auth_front_block{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(-45deg, #ee7752, #d64c81, #b347ce, #c24e7a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  min-width: 325px;
+}
+
+.active {
+  left: 50%;
+  background: linear-gradient(-45deg, #827ae9, #3ca8e7, #7786c9, #408cbe);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.form_block {
+  border-radius: 5px;
+  padding: 1rem;
+  max-width: 400px;
+}
+
+.error_block {
+  min-height: 1rem;
+  color: $Red;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@media screen and (width: 700px) {
+
 }
