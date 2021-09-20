@@ -24,9 +24,7 @@ const Signin: FC = () => {
   }
   return (
     <>
-      <div className="margin">
         <h1 className="white">Регистрация</h1>
-      </div>
       <form
         className={styles.form_block}
         onSubmit={submitForm}

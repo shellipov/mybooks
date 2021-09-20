@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-.container {
+.auth_container {
   min-width: 60%;
   background-color: rgba(255, 255, 255, 0);
   padding: 3rem 0;
@@ -20,7 +20,7 @@
   min-width: 325px;
 }
 
-.auth_front_block{
+.auth_front_block {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -78,6 +78,29 @@
   }
 }
 
-@media screen and (width: 700px) {
+@media screen and (max-width: 750px) {
+  .auth_container {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .auth_back_block {
+    margin: 0 1rem;
+    padding: 1rem;
+    width: 80%;
+  }
+  .auth_front_block {
+    width: 100%;
+    height: auto;
+  }
 
+  .active {
+    left: 0;
+    top: 50%;
+    background: linear-gradient(-45deg, #827ae9, #3ca8e7, #7786c9, #408cbe);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
 }

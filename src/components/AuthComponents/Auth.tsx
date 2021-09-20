@@ -8,7 +8,7 @@ const Auth: FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.auth_container}>
       <div className={styles.auth_back_block}>
         <span className="margin"> У меня есть аккаунт</span>
         <Button color="red" onClick={() => setIsLogin(!isLogin)}>
