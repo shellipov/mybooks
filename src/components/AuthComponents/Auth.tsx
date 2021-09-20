@@ -22,7 +22,7 @@ const Auth: FC = () => {
           {"Зарегистрироваться"}
         </Button>
       </div>
-      <div className={[styles.auth_front_block, isLogin ? styles.active  : ""].join(" ")}>
+      <div className={[styles.auth_front_block, isLogin ? styles.active : ""].join(" ")}>
         {isLogin ? <SignIn /> : <Login />}
       </div>
     </div>

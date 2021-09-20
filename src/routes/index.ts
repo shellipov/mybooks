@@ -1,5 +1,5 @@
 import React from "react";
-import Auth from "../pages/Auth";
+import Auth from "../pages/AuthPage";
 import About from "../pages/About";
 import Books from "../pages/Books";
 import AddBookPage from "../pages/AddBookPage";

@@ -24,10 +24,10 @@ const LogIn: FC = () => {
   return (
     <>
       <div className="margin">
-        <h1>Войти</h1>
+        <h1 className="white">Войти</h1>
       </div>
       <form
-        className={styles.auth_block}
+        className={styles.form_block}
         onSubmit={submitForm}
         onKeyDown={buttonClick}
       >

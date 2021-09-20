@@ -25,10 +25,10 @@ const Signin: FC = () => {
   return (
     <>
       <div className="margin">
-        <h1>Регистрация</h1>
+        <h1 className="white">Регистрация</h1>
       </div>
       <form
-        className={styles.auth_block}
+        className={styles.form_block}
         onSubmit={submitForm}
         onKeyDown={buttonClick}
       >
@@ -61,7 +61,7 @@ const Signin: FC = () => {
           }}
         />
         <div className="center">
-          <Button>{"Зарегистрироваться"}</Button>
+          <Button color="red">{"Зарегистрироваться"}</Button>
         </div>
       </form>
     </>
